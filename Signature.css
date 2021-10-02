@@ -1,0 +1,264 @@
+/*This is my signature style sheet which will be used across most of my projects. Sometimes it will be a diresct pull,
+others it will be a base to copy and paste my signature and copyrights to other project css files*/
+head   {
+    text-align: center;
+    color:gold; }
+
+    /*The background image causes the set image to be the background, the size identifier contain causes it to fill up to the size of the page*/
+body  {
+    text-align: center;
+    background-image: url(UATSpaceBackground.png);
+    background-position: center;
+    background-size: cover;
+    background-color: black;
+    font-size: 1.5em;
+    font: bolder;
+    color: rgb(255, 217, 0);
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+   }
+
+
+
+/*The style to auto align the sides of the tables title*/
+.tableTop {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .centered {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /*I made these tags to color text containg numbers based of their relation to 0 as a base. I did this based off
+   of predetermined values, but a more advanced coder could have it actively search for and detect a change in 
+   numbers on a page and color them accordingly to show things such as profit, debt, and baseline, as well as many other uses.*/
+#positive {
+    color: green;
+}
+
+#negative {
+    color: red;
+}
+
+#neutral {
+    color: blue;
+}
+
+img   { 
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 50%;}
+
+/*These are the styles for my various shaped buttons, altering the borders, padding, and button size, you can create 
+an insane variety of shaped "buttons" with a little ingenuity.*/
+.oval-button {
+    text-align: center;
+        border: none;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 50%;
+    }
+
+    .oval-button-dook {
+        text-align: center;
+            background-image: url("dook.png");
+            background-size: contain;
+            border: none;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            color: orange;
+            text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+
+    .square-button-6star {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px;
+        text-align: center;
+            width: 56px;
+            height: 56px;
+        }
+    .square-button  {
+        width: 50px;
+        height: 20px;
+        text-align: center;
+    }
+
+    .circle-button {
+        width: 64px;
+        height: 64px;
+        font-size: 12px;
+        border-radius: 50%;
+        border:1px solid #cfdcec;
+        overflow:hidden;
+              
+        box-shadow: 0 0 3px gray;
+      }
+
+
+    .arrow-up {
+        width: 0; 
+        height: 0; 
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        
+        border-bottom: 5px solid black;
+      }
+      
+      .arrow-down {
+        width: 0; 
+        height: 0; 
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        
+        border-top: 20px solid #f00;
+      }
+      
+      .arrow-right {
+        width: 0; 
+        height: 0; 
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        
+        border-left: 15px solid green;
+      }
+      
+      .arrow-left {
+        width: 0; 
+        height: 0; 
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent; 
+        
+        border-right:10px solid blue; 
+      }
+
+
+    /*So I dcan remember the divs*/
+      /*
+<div class="arrow-up"></div>
+<div class="arrow-down"></div>
+<div class="arrow-left"></div>
+<div class="arrow-right"></div>
+*/
+
+
+
+
+
+
+
+/*This is so I can customize the scrollbar*/
+/* width of the scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  /* Track, the space of the scrollbar in which the handle slides up and down*/
+  ::-webkit-scrollbar-track {
+    background: orange;
+  }
+  
+  /* Handle, the tab that shows relative position on the scrollbar */
+  ::-webkit-scrollbar-thumb {
+    background:blue;
+  }
+  
+  /* Handle on hover, the handle while hovering over ir or clicking and dragging it. */
+  ::-webkit-scrollbar-thumb:hover {
+    background: purple;
+  }
+
+  /*These are the buttons at the top and bottom of the scrollbar which you click to go up and down.*/
+  ::-webkit-scrollbar-button {
+      background: limegreen;
+  }
+
+
+  /*These are the elements I use, defining two triangles, the seconde flipped creating a six point star.
+  thier is essentially no essence to the box, and its shape ends up defined by its border. The after position
+  being absolute over the original to keep it where I need.*/
+  .six-star{
+	margin-top:20px;
+    margin-left: 590px;
+	width:0;
+	height:0;
+	border-left: 80px  solid transparent;
+	border-right: 80px solid transparent;
+	border-bottom: 160px solid green;
+	position: relative;
+}
+
+.six-star:after{
+	width:0;
+	height:0;
+	border-left: solid 80px transparent ;
+	border-right: solid 80px transparent;
+	border-top: solid 160px green  ;
+	position: absolute;
+	content:"";	
+	top: 45px;
+	left: -80px;
+}
+
+.star-six {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid red;
+    position: relative;
+  }
+.star-six:after {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid red;
+    position: absolute;
+    content: "";
+    top: 30px;
+    left: -50px;
+  }
+
+
+  .arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+  
+  /*These varios identifiers angle the button*/
+  .right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+  
+  .left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
+  
+  .up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+  }
+  
+  .down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }

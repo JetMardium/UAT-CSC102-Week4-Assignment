@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<!--This is a webpage made to fulfil assignments Event Driven Buttons & We Have Sound for CSC102 Week 4 -->
+
+<head>
+    <!--links my javascript file to the html file-->
+    <script src="NBCustom.js"></script>
+    <!--This links my css file to this html-->
+    <link href="Signature.css" rel="stylesheet" type="text/css" />
+    <!--This is where my title for the webpage goes-->
+
+
+    <!--The title that appears on the browser window, or tab-->
+    <title>
+        UAT DSE Secure Connection
+    </title>
+</head>
+
+<body>
+    <!--The tabletop which contains my tables title-->
+    <table class="tableTop">
+        <tr>
+            <!--tr defines a row in a table-->
+            <td><img src="custom.png" /></td>
+            <td>
+                <h1>
+                    UAT Space Program
+                </h1>
+            </td>
+        </tr>
+        <!--The table that contains all information I which to present in this way-->
+    </table>
+    <table class="centered" id="data" border="2" width="70%">
+        <col style="width: 35%;">
+        <col style="width: 35%;">
+        <thead>
+            <tr style="font-family: fantasy;">
+                <th>Data type</th>
+                <th>Reading</th>
+            </tr>
+        </thead>
+        <!-- tr defines a vertical colloumn, or row. Where as td is the horizontal row which represents data cells.
+        I added the various pos, neut, and neg id's to set the numbers colors based on their relation to 0 as a base and defined by their generally referenced colors-->
+        <tbody style="font-weight: bolder;">
+            <tr id="seconds"><td>Time Elapsed:</td><td id="positive">15 seconds</td></tr>
+            <tr id="latitude"><td>Latitude:</td><td id="neutral">0</td></tr>
+            <tr id="longitude"><td>Longitude:</td><td id="neutral">0</td></tr>
+            <tr id="gps_altitude"><td>GPS Altitude:</td><td id="neutral">0</td></tr>
+            <tr id="bmpSensor_altitude"><td>BMP Sensor Altitude:</td><td id="positive">30383.04</td></tr>
+            <tr id="bmpSensor_pressure"><td>BMP Sensor Pressure:</td><td id="positive">2.34</td></tr>
+            <tr id="bmpSensor_temp"><td>BMP Sensor Temp:</td><td id="neutral">0</td></tr>
+            <tr id="bdigSensor_temp"><td>Digital Sensor Temp:</td><td id="positive">24.12</td></tr>
+            <tr id="cssSensor_temp"><td>CSS Sensor Temp:</td><td id="positive">25</td></tr>
+            <tr id="cssSensor_eCO2"><td>CSS Sensor eCO2:</td><td id="positive">400</td></tr>
+            <tr id="cssSensor_TVOC"><td>CSS Sensor TVOC:</td><td id="neutral">0</td></tr>
+            <tr id="UV"><td>UV:</td><td id="neutral">0</td></tr>
+            <tr id="accelX"><td>accelX:</td><td id="positive">-0.87</td></tr>
+            <tr id="accelY"><td>accelY:</td><td id="negative">-0.02</td></tr>
+            <tr id="accelZ"><td>accelZ:</td><td id="positive">9.61</td></tr>
+            <tr id="gyroX"><td>gyroX:</td><td id="positive">0.13</td></tr>
+            <tr id="gyroY"><td>gyroY:</td><td id="negative">0.57</td></tr>
+            <tr id="gyroZ"><td>gyroY:</td><td id="negative">-0.24</td></tr>
+            <tr id="magneticX"><td>magneticX:</td><td id="negative">4.66</td></tr>
+            <tr id="magneticY"><td>magneticY:</td><td id="positive">0.01</td></tr>
+            <tr id="magneticZ"><td>magneticZ:</td><td id="negative">-0.4</td></tr>
+        </tbody>
+    </table>    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!--These buttons I have set up up to both alter the above table with the information required by the assignment,
+    this is predetermined information but in more advanced coding it could be done to generate specific information
+    pulled from any number of resources. I also added an audio effect for both the start and stop button to give it a little
+    more of a dynamic feel. As well as I angle both of them at alternating 45 degree angles purely to give it a simple ascetic change and show off some more coding techniques I've picked up.-->
+    <button onclick="start();" class="right" id="startButton" style="background-color: green;">Start</button>
+    <button onclick="stop();" class="down" id="stopButton" disabled=true style="background-color: red;">Stop</button>
+    <br>
+    <br>
+    <br>
+    <!--I used some clips from a rick and morty soundboard, and then a music editor program to splice them together, to
+    create this basic intro by Professor Sanchez, the DSE Team Lead. I chose the color based on his portal gun technology
+    from the same IP as him.-->
+    <button class="circle-button" onclick="playRickIntro();" style="background: greenyellow">Hello from our Project Lead</button>
+    <br>
+    <!--I chose to put a seal of Solomon over the center of the A as
+    "It reflects the cosmic order, the skies, the movement of the stars in their spheres, and the perpetual flow between heaven and earth, between the elements of air and fire"
+    To me that signifies mortalkinds journey beyond Terra, and in keeping in theme with my previous projects it seemed appropriate. -->
+    <div class="six-star">
+    </div>
+    <br>
+    <!--I did the same thing with this audio snipping together some clips from SG-1-->
+    <button class="circle-button" onclick="playSilentStarDrive();" style="background: blue; margin-right: 20px;">SSD Firing Up Audio</button>
+    <!--Then I chose to go with a full song to show off more than just implementing short audio clips-->
+    <button class="circle-button" onclick="playBlastPast();" style="background: orange; margin-left: 20px;"> Blast from the Past</button>
+    <br>
+    <!--I needed a way to stop the audio from playing if the user wished, thus this simple button set to stop all the audio played by the previous buttons-->
+    <button id="stopButton" class="square-button" onclick="stopAudio();" style="background:red;">OFF</button>
+
+    <br>
+    <br>
+    <!--This obviously doesn't need any explanations lol, I felt it was a good above board way to add some humor for the user-->
+    <button class="oval-button-dook" onclick="playCraps()">play craps</button>
+    <br>
+
+    <h2> Place Your Bet</h2>
+    <h4> Your Monies
+        <!--This shows the user thier money pool, which goes up and down accordingly-->
+        <p id="pool" style="color: darkorange;"> 100 </p>
+    </h4>
+
+    <!--This is the form I created to place a bet, as well as increase or decrease it by  variable of 1-->
+     <form>
+        <input type="number" id="number" min="1" max="100" value="0" style="background-color: indigo;"/>
+        <input type="button" onclick="incrementValue()" value="Increase Bet" style="background-color: green;"/>
+        <input type="button" onclick="decrementValue()" value="Decrease Bet" style="background-color: red;"/>
+    </form>
+    <!--This shows the result of the rolls on screen-->
+    <div id="die1Dis">Die1 results here...</div>
+    <div id="die2Dis">Die2 results here...</div>
+    <div id="sumDis">Sum results here...</div>
+    <div id="resultDis">Final results here...</div>
+
+</body>
+<footer>
+    <!--The footer is generally used ro represent information pertaining to the page, relevenat pages, the author, copyright, etc.
+    I used it it to place a button linking the user back to the login page, which correctly triggers the elton john loop
+    I shadowed the text to make it more readable on the purple background-->
+    <button onclick="window.location.href='login.html'" style="background-color: purple;">
+    <text style="color: orange; text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;">Return to Login</text></button>
+</footer>
+
+</html>
